@@ -18,7 +18,7 @@ const TaskForm = () => {
     if (e.target.name == "completed") {
       setTask({
         ...task,
-        [e.target.name]: true,
+        [e.target.name]: e.target.checked ? true : false,
       })
     } else {
       setTask({
