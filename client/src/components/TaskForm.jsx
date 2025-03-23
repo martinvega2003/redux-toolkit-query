@@ -15,17 +15,10 @@ const TaskForm = () => {
   }
 
   const handleChange = e => {
-    if (e.target.name == "completed") {
-      setTask({
-        ...task,
-        [e.target.name]: e.target.checked ? true : false,
-      })
-    } else {
-      setTask({
-        ...task,
-        [e.target.name]: e.target.value,
-      })
-    }
+    setTask({
+      ...task,
+      [e.target.name]: e.target.type ==="checkbox" ? e.target.checked ? true : false : e.target.value,
+    })
   }
 
   return (
