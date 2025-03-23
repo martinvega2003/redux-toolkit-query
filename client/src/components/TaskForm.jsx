@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useCreateTaskMutation } from '../API/apiSlice'
 
 const TaskForm = () => {
+
+  const [createTask] = useCreateTaskMutation() // We can name this whatever we want
 
   const [task, setTask] = useState({
     title: '',
@@ -11,7 +14,11 @@ const TaskForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    console.log(task)
+    createTask({
+      name: task.title,
+      description: task.description,
+      completed: task.completed, 
+    })
   }
 
   const handleChange = e => {
