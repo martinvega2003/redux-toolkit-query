@@ -17,10 +17,17 @@ export const apiSlice = createApi({
         body: newTask, // Need to pass a body
       }),
       invalidatesTags: ["tasks"] // Execute 'tasks' function
+    }),
+    deleteTask: builder.mutation({
+      query: id => ({
+        url: `/tasks/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["tasks"]
     })
   }),
 });
 
 // from the endpoints rtk query creates hooks that contains the data, isError, isLoading, error, and other values.
 // from getTasks endpoint it created a useGetTasksQuery hook
-export const { useGetTasksQuery, useCreateTaskMutation } = apiSlice
+export const { useGetTasksQuery, useCreateTaskMutation, useDeleteTaskMutation } = apiSlice
