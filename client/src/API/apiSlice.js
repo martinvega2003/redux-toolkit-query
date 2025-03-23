@@ -9,6 +9,13 @@ export const apiSlice = createApi({
     getTasks: builder.query({ 
       query: () => '/tasks' //baseUrl + /tasks = endpoint to get all tasks
     }),
+    createTask: builder.mutation({ // query is used to get data, mutation is used to mutate data (In this case, create)
+      query: (newTask) => ({ // Pass as an argument the new task we want to create
+        url: "/tasks",
+        method: "POST", // Need to specify the method
+        body: newTask, // Need to pass a body
+      })
+    })
   }),
 });
 
