@@ -1,9 +1,11 @@
 import React from 'react'
 import TasksList from './components/TasksList'
+import TaskForm from './components/TaskForm'
 
 const App = () => {
   return (
-    <div className='text-center text-6xl text-red-600'>
+    <div className='flex flex-col justify-start items-center'>
+      <TaskForm />
       <TasksList />
     </div>
   )
