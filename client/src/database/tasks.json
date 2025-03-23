@@ -23,6 +23,18 @@
       "name": "Task 4",
       "description": "Task 4 Description",
       "completed": false
+    },
+    {
+      "id": "4b8e",
+      "name": "New task",
+      "description": "New Task Description",
+      "completed": false
+    },
+    {
+      "id": "2041",
+      "name": "New Task II",
+      "description": "Task Desc",
+      "completed": true
     }
   ]
 }
